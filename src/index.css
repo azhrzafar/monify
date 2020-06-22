@@ -1,0 +1,325 @@
+/* generic style */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background: #233858;
+  color: white;
+}
+
+.container {
+  max-width: 50em;
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* header style */
+.summary-container {
+  width: 100%;
+  text-align: center;
+}
+.summary-month {
+  font-size: 1.2em;
+  line-height: 2em;
+  text-transform: uppercase;
+}
+
+.summary-budget {
+  font-size: 4.2em;
+  margin: 0.1em;
+  font-weight: 600;
+}
+
+.summary-label {
+  font-size: 1.4em;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+}
+
+.summary-detail {
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+}
+
+.summary-income {
+  flex: 1;
+  color: #62c15d;
+}
+
+.summary-expense {
+  flex: 1;
+  color: #d65555;
+}
+
+.summary-detail .icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.switch-container {
+  width: 3em;
+  display: flex;
+  justify-content: center;
+}
+
+.switch {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch + div {
+  width: 3em;
+  height: 30px;
+  border-radius: 5em;
+  cursor: pointer;
+  background-color: #62c15d;
+  transition: 0.4s;
+}
+
+.switch:checked + div {
+  background-color: #d65555;
+}
+
+.switch + div > div {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: inherit;
+  background: #ffffff;
+  transition: 0.4s;
+  margin: 3px 4px;
+}
+
+.switch:checked + div > div {
+  -webkit-transform: translate3d(27px, 0, 0);
+  transform: translate3d(27px, 0, 0);
+}
+
+/* form style */
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.input-description-container {
+  flex: 3;
+}
+
+.input-amount-container {
+  flex: 1;
+}
+
+.input-description,
+.input-amount {
+  font-size: 1.2em;
+  font-weight: lighter;
+  text-align: left;
+  outline: none;
+  border: 0;
+  padding: 5px;
+  background: transparent;
+  width: 90%;
+}
+
+.input-description::placeholder,
+.input-amount::placeholder {
+  color: #d6d6d6;
+  opacity: 1;
+}
+
+.input-income {
+  color: #62c15d;
+  border-bottom: 1px solid #62c15d;
+}
+
+.input-expense {
+  color: #d65555;
+  border-bottom: 1px solid #d65555;
+}
+
+.button-container {
+  width: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  cursor: pointer;
+  background: transparent;
+  color: #62c15d;
+  outline: none;
+  border: 0px;
+}
+
+.button-income {
+  color: #62c15d;
+}
+
+.button-expense {
+  color: #d65555;
+}
+
+.button .icon {
+  width: 2em;
+  height: 2em;
+  line-height: 1em;
+  fill: currentColor;
+}
+
+/* items style */
+.items-container {
+  margin: 3em 0;
+}
+
+.item {
+  display: flex;
+  padding: 1em 0.5em;
+}
+
+.item-description {
+  flex: 3;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.item-amount {
+  flex: 1;
+  font-size: 1.5em;
+  text-align: right;
+  transition: all 0.3s;
+}
+
+.item:not(:last-child) {
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.amount-income {
+  color: #62c15d;
+}
+
+.amount-expense {
+  color: #d65555;
+}
+
+.button-delete {
+  display: none;
+  cursor: pointer;
+  line-height: 1em;
+  font-size: 0.7em;
+  border: 0;
+  padding: 0;
+  color: #d65555;
+  background: transparent;
+  transition: all 0.4s;
+}
+
+.button-delete .icon {
+  width: 2em;
+  height: 2em;
+  margin-left: 0.5em;
+  fill: currentColor;
+}
+
+.item:hover .button-delete {
+  display: block;
+  transform: 0.4s;
+}
+
+.item:hover .item-amount {
+  transform: translateX(-10px);
+}
+
+@media only screen and (max-width: 425px) {
+  .summary-month {
+    font-size: 0.8em;
+  }
+
+  .summary-budget {
+    font-size: 2.5em;
+  }
+
+  .summary-label {
+    font-size: 0.8em;
+  }
+
+  .summary-income {
+    font-size: 0.8em;
+  }
+
+  .summary-expense {
+    font-size: 0.8em;
+  }
+
+  .summary-detail .icon {
+    width: 0.8em;
+    height: 0.8em;
+  }
+
+  .input-description,
+  .input-amount {
+    font-weight: lighter;
+    font-size: 0.8em;
+  }
+
+  .button-container {
+    width: 2em;
+  }
+
+  .button-income {
+    color: #62c15d;
+  }
+
+  .button .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .switch-container {
+    width: 2em;
+  }
+
+  .switch + div {
+    width: 2em;
+    height: 18px;
+    border-radius: 5em;
+  }
+
+  .switch + div > div {
+    width: 12px;
+    height: 12px;
+    margin: 3px;
+  }
+
+  .switch:checked + div > div {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  .item-description {
+    font-size: 0.8em;
+  }
+
+  .item-amount {
+    font-size: 0.9em;
+  }
+
+  .button-delete {
+    font-size: 0.7em;
+  }
+
+  .button-delete .icon {
+    width: 1.3em;
+    height: 1.3em;
+  }
+}
